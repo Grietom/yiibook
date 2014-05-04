@@ -5,24 +5,24 @@ This project is meant to serve as a practice platform for Yii Book contained cod
 
 ##Progress
 
-NNN | Chapter | Done
+N | Chapter | Done
 --- | ------- | ----
-* | Fundemental Concepts | -
-* | Starting a new application | -
-* | A Manual For your Yii Site | -
-NNN | Initial Customization And Code Generations | -
-NNN | Working With Models | -
-NNN | Working With Views | -
-NNN | Working With Controllers | -
-NNN | Working With Databases | -
-NNN | Working With Forms | -
-NNN | Maintaining Site | -
-NNN | User Authentication And Authorization | -
-NNN | Working With Widgets | -
-NNN | Using extensions | -
-NNN | JavaScript and Jquery | -
-NNN | Internationalization | -
-NNN | Leaving The Browser | -
-NNN | Improving Performance | -
-NNN | Advanced Database Issues | -
-NNN | Extending YII | -
+1. | Fundemental Concepts | -
+2. | Starting a new application | -
+3. | A Manual For your Yii Site | -
+4. | Initial Customization And Code Generations | -
+5. | Working With Models | -
+6. | Working With Views | -
+7. | Working With Controllers | -
+8. | Working With Databases | -
+9. | Working With Forms | -
+10. | Maintaining Site | -
+11. | User Authentication And Authorization | -
+12. | Working With Widgets | -
+13. | Using extensions | -
+14. | JavaScript and Jquery | -
+15. | Internationalization | -
+16. | Leaving The Browser | -
+17. | Improving Performance | -
+18. | Advanced Database Issues | -
+19. | Extending YII | -
