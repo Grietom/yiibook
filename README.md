@@ -5,9 +5,9 @@ This project is meant to serve as a practice platform for Yii Book contained cod
 
 ##Progress
 
-#|Chapter | Done
+|Chapter | Done
 -|------- | ----
-*|Fundemental Concepts | -
+|Fundemental Concepts | -
 |Starting a new application | -
 |A Manual For your Yii Site | -
 |Initial Customization And Code Generations | -
