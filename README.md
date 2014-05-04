@@ -7,9 +7,9 @@ This project is meant to serve as a practice platform for Yii Book contained cod
 
 NNN | Chapter | Done
 --- | ------- | ----
-NNN | Fundemental Concepts | -
-NNN | Starting a new application | -
-NNN | A Manual For your Yii Site | -
+* | Fundemental Concepts | -
+* | Starting a new application | -
+* | A Manual For your Yii Site | -
 NNN | Initial Customization And Code Generations | -
 NNN | Working With Models | -
 NNN | Working With Views | -
