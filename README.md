@@ -3,6 +3,12 @@ yiibook
 
 This project is meant to serve as a practice platform for Yii Book contained code.
 
+##Installation
+
+1. Clone the repo
+2. Copy and paste protected/config folders' "-example.php" files as ".php" (main-example.php as main.php etc.)
+3. Edit configuration files
+
 ##Progress
 
 N | Chapter | Done
