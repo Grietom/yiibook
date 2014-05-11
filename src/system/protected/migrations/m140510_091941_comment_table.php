@@ -12,9 +12,10 @@ class m140510_091941_comment_table extends CDbMigration
                 "User_id" => "integer",
                 "Page_id" => "integer",
                 "Comment" => "TEXT",
+                "Created" => "TIMESTAMP",
             ), 'ENGINE=InnoDB CHARSET=utf8');
 
-            $this->addForeignKey('user_comment_id', 'page', 'User_id', 'user', 'Id');
+            $this->addForeignKey('user_comment_id', 'comment', 'User_id', 'user', 'Id');
             $this->addForeignKey('page_comment_id', 'comment', 'Page_id', 'page', 'Id');
 
             $transaction->commit();
