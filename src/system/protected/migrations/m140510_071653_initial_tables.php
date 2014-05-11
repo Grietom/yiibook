@@ -8,29 +8,16 @@ class m140510_071653_initial_tables extends CDbMigration
 
         try {
 
-            //types table
-            $this->createTable("type", array(
-                "Id" => "pk",
-                "typeName" => "string NOT NULL COMMENT '1 = admin, 2 = editor, 3 = Creator, 4 = Basic'",
-            ));
-
-            $this->insert('type', array('Id' => 1, 'typeName' => 'Admin'));
-            $this->insert('type', array('Id' => 2, 'typeName' => 'Editor'));
-            $this->insert('type', array('Id' => 3, 'typeName' => 'Creator'));
-            $this->insert('type', array('Id' => 4, 'typeName' => 'Basic'));
             //user table
             $this->createTable("User", array(
                 "Id" => "pk",
                 "Username" => "string NOT NULL COMMENT 'Username' ",
                 "Email" =>  "string NOT NULL COMMENT 'User email' ",
                 "Password" => "string NOT NULL COMMENT 'User password' ",
-                "type_id" => "integer NOT NULL COMMENT '1 = admin, 2 = editor, 3 = Creator, 4 = Basic'",
-                "Created_at" => "DATETIME NOT NULL",
+                "Type" => "ENUM('public', 'author', 'admin')",
+                "Created_at" => "TIMESTAMP NOT NULL",
                 "Last_login" =>  "DATETIME NULL",
             ), 'ENGINE=InnoDB CHARSET=utf8');
-
-            //foreign keys for user
-            $this->addForeignKey('user_type', 'User', 'type_id', 'type', 'Id');
 
 //            adding test users
             $this->insert('User', array(
@@ -38,7 +25,7 @@ class m140510_071653_initial_tables extends CDbMigration
                 'Username' => 'admin',
                 'Email' => 'admin@example.org',
                 'Password' => sha1('admin'),
-                'type_id' => 1,
+                'Type' => 'admin',
                 "Created_at" => new CDbExpression('NOW()'),
             ));
             $this->insert('User', array(
@@ -46,32 +33,23 @@ class m140510_071653_initial_tables extends CDbMigration
                 'Username' => 'admin2',
                 'Email' => 'admin2@example.org',
                 'Password' => sha1('admin2'),
-                'type_id' => 1,
+                'Type' => 'admin',
                 "Created_at" => new CDbExpression('NOW()'),
             ));
             $this->insert('User', array(
                 'Id' => 3,
-                'Username' => 'editor',
-                'Email' => 'editor@example.org',
+                'Username' => 'author',
+                'Email' => 'author@example.org',
                 'Password' => sha1('editor'),
-                'type_id' => 2,
+                'Type' => 'author',
                 "Created_at" => new CDbExpression('NOW()'),
             ));
             $this->insert('User', array(
                 'Id' => 4,
-                'Username' => 'creator',
-                'Email' => 'creator@example.org',
+                'Username' => 'public',
+                'Email' => 'public@example.org',
                 'Password' => sha1('creator'),
-                'type_id' => 3,
-                "Created_at" => new CDbExpression('NOW()'),
-            ));
-
-            $this->insert('User', array(
-                'Id' => 5,
-                'Username' => 'basic',
-                'Email' => 'basic@example.org',
-                'Password' => sha1('basic'),
-                'type_id' => 4,
+                'Type' => 'public',
                 "Created_at" => new CDbExpression('NOW()'),
             ));
 
@@ -86,9 +64,6 @@ class m140510_071653_initial_tables extends CDbMigration
 
     public function down()
     {
-        $this->delete("User");
         $this->dropTable("User");
-        $this->delete("type");
-        $this->dropTable("type");
     }
 }
